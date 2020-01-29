@@ -12,4 +12,6 @@ class Person extends Model
         'masse',
         'gender'
     ];
+
+
 }
