@@ -32,7 +32,7 @@ class Database
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-            'port'      => '3308'
+            'port'      => '3306'
         ];
     }
 
