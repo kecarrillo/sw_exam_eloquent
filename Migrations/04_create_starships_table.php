@@ -9,7 +9,8 @@ $database = new Database();
 
 $database->getManager()->schema()->create('starships', function (Blueprint $table) {
     $table->increments('id');
-    $table->string('name');
-    $table->text('length');
-    $table->integer('hyperdrive_rating');
+    $table->text('name');
+    $table->double(8,2)('length');
+    $table->double(8,2)('hyperdrive_rating');
+    $table->timestamps();
 });

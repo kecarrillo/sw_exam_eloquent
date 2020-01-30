@@ -9,6 +9,7 @@ $database = new Database();
 
 $database->getManager()->schema()->create('vehicles', function (Blueprint $table) {
     $table->increments('id');
-    $table->integer('name')->unsigned();
-    $table->integer('length')->unsigned();
+    $table->text('name');
+    $table->double(8,2)('length');
+    $table->timestamps();
 });

@@ -9,9 +9,12 @@ $database = new Database();
 
 $database->getManager()->schema()->create('Planets', function (Blueprint $table) {
     $table->increments('id');
-    $table->string('diameter');
-    $table->string('climate');
-    $table->string('population');
+    $table->varchar(191)('name');
+    $table->integer(11)('diameter');
+    $table->varchar(191)('climate');
+    $table->varchar(191)('population');
+    $table->integer('person_id')->unsigned();
+    $table->timestamps();
 
     $table->foreign('person_id')->references('id')->on('persons');
 });
