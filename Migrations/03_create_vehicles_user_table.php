@@ -10,6 +10,6 @@ $database = new Database();
 $database->getManager()->schema()->create('vehicles', function (Blueprint $table) {
     $table->increments('id');
     $table->text('name');
-    $table->double(8,2)('length');
+    $table->float('length');
     $table->timestamps();
 });

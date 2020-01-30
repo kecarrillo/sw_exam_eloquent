@@ -10,8 +10,8 @@ $database = new Database();
 $database->getManager()->schema()->create('Persons', function (Blueprint $table) {
     $table->increments('id');
     $table->text('name');
-    $table->int(11)('height');
-    $table->int(11)('mass');
+    $table->integer('height');
+    $table->integer('mass');
     $table->text('gender');
     $table->integer('vehicle_id')->unsigned();
     $table->integer('starship_id')->unsigned();
