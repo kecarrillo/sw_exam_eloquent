@@ -26,12 +26,13 @@ class Database
         return [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'orm-laravel',
-            'username'  => 'bobby',
-            'password'  => 'bobledev',
+            'database'  => 'bdd_sw_exam_eloquent',
+            'username'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
+            'port'      => '3308'
         ];
     }
 
