@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 $database = new Database();
 
-$database->getManager()->schema()->create('vehicules', function (Blueprint $table) {
+$database->getManager()->schema()->create('vehicles', function (Blueprint $table) {
     $table->increments('id');
     $table->integer('name')->unsigned();
     $table->integer('length')->unsigned();

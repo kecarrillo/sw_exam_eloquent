@@ -11,4 +11,9 @@ class Starship extends Model
         'length',
         'hyperdrive_rating',
     ];
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
 }
