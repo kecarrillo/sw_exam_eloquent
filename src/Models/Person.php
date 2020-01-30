@@ -15,22 +15,22 @@ class Person extends Model
 
     public function vehicle()
     {
-        return $this->hasMany('App\Vehicules');
+        return $this->belongsToMany('App\Vehicule');
     }
 
     public function starship()
     {
-        return $this->hasMany('App\Starships');
+        return $this->belongsToMany('App\Starship');
     }
 
     public function specie()
     {
-        return $this->belongsTo('App\Species');
+        return $this->belongsTo('App\Specie');
     }
 
     public function planet()
     {
-        return $this->belongsTo('App\Planets');
+        return $this->belongsTo('App\Planet');
     }
 
 }

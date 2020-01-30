@@ -14,7 +14,7 @@ class Planet extends Model
     ];
     public function person()
     {
-        return $this->hasMany('App\Persons');
+        return $this->hasMany('App\Person');
     }
 
 
