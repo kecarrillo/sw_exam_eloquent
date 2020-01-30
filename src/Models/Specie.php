@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Specie extends Model
 {
+    protected $table = 'species';
+
     protected $fillable = [
         'name',
-        'classification',
+        'classification'
     ];
 
     public function person()
     {
-        return $this->hasMany('App\Person');
+        return $this->hasMany(Person::class);
     }
 }
