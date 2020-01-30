@@ -6,31 +6,34 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
+    protected $table = 'persons';
+
     protected $fillable = [
-        'name',
-        'height',
         'mass',
-        'gender'
+        'name',
+        'gender',
+        'height',
+        'planet_id',
+        'specie_id',
     ];
 
-    public function vehicle()
+    public function planet()
     {
-        return $this->belongsToMany('App\Vehicule');
-    }
-
-    public function starship()
-    {
-        return $this->belongsToMany('App\Starship');
+        return $this->belongsTo(Planet::class);
     }
 
     public function specie()
     {
-        return $this->belongsTo('App\Specie');
+        return $this->belongsTo(Specie::class);
     }
 
-    public function planet()
+    public function vehicles()
     {
-        return $this->belongsTo('App\Planet');
+        return $this->belongsToMany(Vehicle::class);
     }
 
+    public function starships()
+    {
+        return $this->belongsToMany(Starship::class);
+    }
 }

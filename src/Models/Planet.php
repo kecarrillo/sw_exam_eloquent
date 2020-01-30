@@ -6,16 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Planet extends Model
 {
+    protected $table = 'planets';
+
     protected $fillable = [
         'name',
-        'diameter',
         'climate',
-        'population'
+        'diameter',
+        'population',
     ];
+
     public function person()
     {
-        return $this->hasMany('App\Person');
+        return $this->hasMany(Person::class);
     }
-
-
 }
