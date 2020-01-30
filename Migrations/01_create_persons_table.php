@@ -11,9 +11,9 @@ $database->getManager()->schema()->create('Persons', function (Blueprint $table)
     $table->increments('id');
     $table->string('name');
     $table->string('height');
-    $table->string('masse');
+    $table->string('mass');
     $table->string('gender');
 
-    $table->foreign('vehicule_id')->references('id')->on('vehicules');
+    $table->foreign('vehicle_id')->references('id')->on('vehicles');
     $table->foreign('starship_id')->references('id')->on('starships');
 });

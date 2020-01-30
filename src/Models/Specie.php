@@ -10,4 +10,9 @@ class Specie extends Model
         'name',
         'classification',
     ];
+
+    public function person()
+    {
+        return $this->hasMany('App\Persons');
+    }
 }

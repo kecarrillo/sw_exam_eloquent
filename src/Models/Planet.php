@@ -12,4 +12,10 @@ class Planet extends Model
         'climate',
         'population'
     ];
+    public function person()
+    {
+        return $this->hasMany('App\Persons');
+    }
+
+
 }
