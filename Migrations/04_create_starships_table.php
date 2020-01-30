@@ -10,7 +10,7 @@ $database = new Database();
 $database->getManager()->schema()->create('starships', function (Blueprint $table) {
     $table->increments('id');
     $table->text('name');
-    $table->double(8,2)('length');
-    $table->double(8,2)('hyperdrive_rating');
+    $table->float('length');
+    $table->float('hyperdrive_rating');
     $table->timestamps();
 });
