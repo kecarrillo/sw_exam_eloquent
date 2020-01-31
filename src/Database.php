@@ -26,11 +26,7 @@ class Database
         return [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-<<<<<<< HEAD
-            'database'  => 'starwars',
-=======
             'database'  => 'sw_exam',
->>>>>>> a7c1c7fad686e447722c5deaf7cf5ff16cf06a93
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',

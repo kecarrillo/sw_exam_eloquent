@@ -28,7 +28,7 @@ use App\Models\Starship;
 use App\Models\Specie;
 use App\Models\Planets;
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 (new Database())->initConnexion();
 
@@ -52,7 +52,7 @@ $person->starships()->sync($starships);
 }
 
 $specieName = Specie::findOrFail($specie)->name;
-$planetName = Specie::findOrFail($planet)->name;
+$planetName = Planet::findOrFail($planet)->name;
 
 ?>
 
@@ -71,7 +71,7 @@ $planetName = Specie::findOrFail($planet)->name;
 			if(isset($_POST['vehicles']))
 			{
 				echo 'Véhicules : ';
-				foreach ($vehicles as $vehicle) { echo '<br>' . Vehicle::findOrFail($vehicle)->name; } 
+				foreach ($vehicles as $vehicle) { echo '<br>' . Vehicle::findOrFail($vehicle)->name; }
 			}
 			if(isset($_POST['starships']))
 			{
@@ -81,5 +81,5 @@ $planetName = Specie::findOrFail($planet)->name;
 		?>
 
 	</p>
-	<a href='http://localhost/sw_exercice/sw_exam_eloquent/main.php'>Retour vers la saisie</a>
+	<a href='index.php'>Retour au menu</a>
 </div>

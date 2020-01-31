@@ -7,62 +7,9 @@ use App\Models\Starship;
 use App\Models\Specie;
 use App\Models\Planet;
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 (new Database())->initConnexion();
-
-//$name = $_POST['person_name'];
-//delete_a_person($name);
-//delete_a_planet($name);
-
-$persons = Person::with(['specie', "planet"])->get();
-echo '
-<table>
-	<thead>
-		<tr>
-			<th>Nom</th>
-			<th>Sexe</th>
-			<th>Poids</th>
-			<th>Taille</th>
-			<th>Espece</th>
-			<th>Planète</th>
-		</tr>
-	</thead>
-	<tbody>';
-
-foreach ($persons as $person) {
-	echo '<tr><th>' . $person->name . '</th>';
-	echo '<th>' . $person->gender . '</th>';
-	echo '<th>' . $person->mass . '</th>';
-	echo '<th>' . $person->height . '</th>';
-	echo '<th>';
-	switch (is_object($person->specie)) {
-		case False:
-			echo '';
-			break;
-		default:
-			echo $person->specie->name;
-			break;
-	}
-	echo '</th>';
-	echo '<th>' . $person->planet->name . '</th>';
-	//try {
-	//	echo '<th>' . json_decode($person->load(['specie'])->specie)->name . '</th>';
-	//} catch {
-	//	var_dump(json_decode($person->load(['specie'])->specie));
-	//}
-	//try {
-	//	echo '<th>' . json_decode($person->load(['planet'])->planet)->name . '</th></tr>';
-	//} catch {
-	//	var_dump(json_decode($person->load(['planet'])->planet));
-	//}
-}
-
-echo '	</tr>
-	</tbody>
-</table>';
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $vehicles = Vehicle::all();
 $starships = Starship::all();
@@ -71,7 +18,14 @@ $planets = Planet::all();
 
 echo '<form method="POST" action="test.php">';
 echo '<h2>Nouveau personnage</h2>';
-echo '<input name="name" placeholder="Nom"></input><br><input name="gender" placeholder="Sexe"></input><br><input name="mass" placeholder="Poids en kg"></input><br><input name="height" placeholder="Taille en cm"></input>';
+echo '<input name="name" placeholder="Nom"></input><br>';
+echo '<select name="gender" placeholder="Sexe">
+        <option select="selected" value="n/a">n/a</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="hermaphrodite">hermaphrodite</option>
+      </select><br>';
+echo '<input name="mass" placeholder="Poids en kg"></input><br><input name="height" placeholder="Taille en cm"></input>';
 
 // Vehicles
 echo '<br><select multiple size=20 name="vehicles[]" id="vehicle-select">' . '<option value="">--Choisir un ou plusieurs vehicules--</option>';
