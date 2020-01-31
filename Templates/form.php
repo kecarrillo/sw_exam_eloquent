@@ -18,7 +18,14 @@ $planets = Planet::all();
 
 echo '<form method="POST" action="test.php">';
 echo '<h2>Nouveau personnage</h2>';
-echo '<input name="name" placeholder="Nom"></input><br><input name="gender" placeholder="Sexe"></input><br><input name="mass" placeholder="Poids en kg"></input><br><input name="height" placeholder="Taille en cm"></input>';
+echo '<input name="name" placeholder="Nom"></input><br>';
+echo '<select name="gender" placeholder="Sexe">
+        <option select="selected" value="n/a">n/a</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="hermaphrodite">hermaphrodite</option>
+      </select><br>';
+echo '<input name="mass" placeholder="Poids en kg"></input><br><input name="height" placeholder="Taille en cm"></input>';
 
 // Vehicles
 echo '<br><select multiple size=20 name="vehicles[]" id="vehicle-select">' . '<option value="">--Choisir un ou plusieurs vehicules--</option>';

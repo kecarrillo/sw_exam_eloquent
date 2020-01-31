@@ -52,7 +52,7 @@ $person->starships()->sync($starships);
 }
 
 $specieName = Specie::findOrFail($specie)->name;
-$planetName = Specie::findOrFail($planet)->name;
+$planetName = Planet::findOrFail($planet)->name;
 
 ?>
 
@@ -81,5 +81,5 @@ $planetName = Specie::findOrFail($planet)->name;
 		?>
 
 	</p>
-	<a href='http://localhost/sw_exercice/sw_exam_eloquent/main.php'>Retour vers la saisie</a>
+	<a href='index.php'>Retour au menu</a>
 </div>
