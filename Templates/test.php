@@ -28,7 +28,7 @@ use App\Models\Starship;
 use App\Models\Specie;
 use App\Models\Planets;
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 (new Database())->initConnexion();
 
@@ -71,7 +71,7 @@ $planetName = Specie::findOrFail($planet)->name;
 			if(isset($_POST['vehicles']))
 			{
 				echo 'Véhicules : ';
-				foreach ($vehicles as $vehicle) { echo '<br>' . Vehicle::findOrFail($vehicle)->name; } 
+				foreach ($vehicles as $vehicle) { echo '<br>' . Vehicle::findOrFail($vehicle)->name; }
 			}
 			if(isset($_POST['starships']))
 			{
