@@ -26,7 +26,7 @@ class Database
         return [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'bdd_sw_exam_eloquent',
+            'database'  => 'starwars',
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',
