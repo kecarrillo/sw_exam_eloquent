@@ -7,7 +7,6 @@ use App\Models\Specie;
 use App\Models\Planet;
 
 require_once '../vendor/autoload.php';
-
 (new Database())->initConnexion();
 
 $vehicles = Vehicle::all();
@@ -15,7 +14,7 @@ $starships = Starship::all();
 $species = Specie::all();
 $planets = Planet::all();
 
-echo '<form method="POST" action="test.php">';
+echo '<form method="POST" action="action_page.php">';
 echo '<h2>Nouveau personnage</h2>';
 echo '<input name="name" placeholder="Nom"></input><br>';
 echo '<select name="gender" placeholder="Sexe">

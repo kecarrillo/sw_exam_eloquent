@@ -10,7 +10,6 @@ use App\Models\PersonStarship;
 require_once '../vendor/autoload.php';
 (new Database())->initConnexion();
 
-
 $persons = Person::with(['specie', "planet"])->get();
 echo '
 <table>
@@ -29,7 +28,7 @@ echo '
 	<tbody>';
 
 foreach ($persons as $person) {
-	echo '<tr><th>' . $person->name . '</th>';
+	echo '<tr><th><a href="view_person.php?id=' . $person->id . '">' . $person->name . '</a></th>';
 	echo '<th>' . $person->gender . '</th>';
 	echo '<th>' . $person->mass . '</th>';
 	echo '<th>' . $person->height . '</th>';
@@ -43,7 +42,7 @@ foreach ($persons as $person) {
 			break;
 	}
 	echo '</th>';
-	echo '<th>' . $person->planet->name . '</th>';
+	echo '<th><a href="view_planet.php?id=' . $person->planet_id . '">' . $person->planet->name . '</th>';
 
 	$pvehicles = PersonVehicle::where("person_id",$person->id)->get();
 	echo '<th>';
