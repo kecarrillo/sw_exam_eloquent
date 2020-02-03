@@ -2,12 +2,7 @@
 
 use App\Database;
 use App\Models\Person;
-use App\Models\Vehicle;
-use App\Models\Starship;
-use App\Models\Specie;
 use App\Models\Planet;
-use App\Models\PersonVehicle;
-use App\Models\PersonStarship;
 
 require_once '../vendor/autoload.php';
 (new Database())->initConnexion();

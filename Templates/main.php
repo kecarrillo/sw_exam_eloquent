@@ -39,17 +39,17 @@ foreach ($persons as $person) {
 			echo '';
 			break;
 		default:
-			echo $person->specie->name;
+			echo '<a href="view_species.php?id=' . $person->specie_id . '">'.$person->specie->name.'</a>';
 			break;
 	}
 	echo '</th>';
-	echo '<th><a href="view_planet.php?id=' . $person->planet_id . '">' . $person->planet->name . '</th>';
+	echo '<th><a href="view_planet.php?id=' . $person->planet_id . '">' . $person->planet->name . '</a></th>';
 
 	$pvehicles = PersonVehicle::where("person_id",$person->id)->get();
 	echo '<th>';
 	foreach ($pvehicles as $pv) {
 		$p_vehicle = Vehicle::findOrFail(json_decode($pv)->vehicle_id)->name;
-		echo $p_vehicle."<br>";
+		echo '<a href="view_vehicle.php?id=' . json_decode($pv)->vehicle_id . '">'.$p_vehicle.'</a><br>';
 	}
 	echo '</th>';
 
@@ -57,7 +57,7 @@ foreach ($persons as $person) {
 	echo '<th>';
 	foreach ($pstarhips as $ps) {
 		$p_starship = Starship::findOrFail(json_decode($ps)->starship_id)->name;
-		echo $p_starship."<br>";
+		echo '<a href="view_vehicle.php?id=' . json_decode($ps)->starship_id .'">'.$p_starship.'</a><br>';
 	}
 	echo '</th>';
 }
