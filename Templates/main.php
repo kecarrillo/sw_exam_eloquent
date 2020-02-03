@@ -4,18 +4,12 @@ use App\Database;
 use App\Models\Person;
 use App\Models\Vehicle;
 use App\Models\Starship;
-use App\Models\Specie;
-use App\Models\Planet;
 use App\Models\PersonVehicle;
 use App\Models\PersonStarship;
 
 require_once '../vendor/autoload.php';
-
 (new Database())->initConnexion();
 
-//$name = $_POST['person_name'];
-//delete_a_person($name);
-//delete_a_planet($name);
 
 $persons = Person::with(['specie', "planet"])->get();
 echo '
@@ -66,17 +60,6 @@ foreach ($persons as $person) {
 		echo $p_starship."<br>";
 	}
 	echo '</th>';
-
-	//try {
-	//	echo '<th>' . json_decode($person->load(['specie'])->specie)->name . '</th>';
-	//} catch {
-	//	var_dump(json_decode($person->load(['specie'])->specie));
-	//}
-	//try {
-	//	echo '<th>' . json_decode($person->load(['planet'])->planet)->name . '</th></tr>';
-	//} catch {
-	//	var_dump(json_decode($person->load(['planet'])->planet));
-	//}
 }
 
 echo '	</tr>

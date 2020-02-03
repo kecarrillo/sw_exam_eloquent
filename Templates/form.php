@@ -1,7 +1,6 @@
 <?php
 
 use App\Database;
-use App\Models\Person;
 use App\Models\Vehicle;
 use App\Models\Starship;
 use App\Models\Specie;
@@ -58,13 +57,3 @@ echo '</select>';
 echo '<br><button type="submit">Valider</button>';
 echo '</form>';
 
-//$name = Person::findOrFail('name', $name);
-//$person = Person::findOrFail('gender', $gender);
-//$person = Person::findOrFail('mass', $mass);
-//$person = Person::findOrFail('height', $height);
-//$specie = Specie::whereHas('persons', function ($query) {
-//    $query->where('id', $person);
-//})->get();
-//$planet = Planet::whereHas('persons', function ($query) {
-//    $query->where('id', $person);
-//})->get();
